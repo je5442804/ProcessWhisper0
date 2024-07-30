@@ -1,5 +1,5 @@
 # NtSetInformationProcess->ProcessInstrumentationCallback
-任何版本都不支持跨进程架构进行注入
+v0.5 在任何操作系统版本都不支持跨进程架构进行注入
 
 ## 限制
 1: 老旧系统下Wow64 Nt syscall不触发，x86 Native 系统有很低的概率会崩溃，当然x64, wow64在某些罕见进程也可能会崩溃  
@@ -28,3 +28,12 @@ Windows 10 -> Windows 11 (10240->?, 正常工作)
 
 [x64 Native]
 Widnows Vista -> Windows 11
+
+## Reference
+[1] https://everdox.blogspot.com/2013/02/instrumentationcallback-and-advanced.html  
+[2] https://blog.xenoscr.net/2022/01/17/x86-Nirvana-Hooks.html  
+[3] https://github.com/ec-d/instrumentation-callback-x86/blob/master/main.c  
+[4] https://www.codeproject.com/Articles/543542/Windows-x64-System-Service-Hooks-and-Advanced-Debu  
+[5] https://splintercod3.blogspot.com/p/weaponizing-mapping-injection-with.html  
+[6] https://wbenny.github.io/2018/11/04/wow64-internals.html  
+[7] https://web.archive.org/web/20160825133806/https://sww-it.ru/2016-04-11/1332   
