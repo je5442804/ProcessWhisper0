@@ -16,18 +16,18 @@ The process has a debug port, but the debugger chose not to handle the exception
 [KiUserApcDispatcher] - This is where user queued apc's are dispatched.  
   
 ### Supported
-[x86 Native]:
-Windows 10 x86 (ALL NT10 x86->x86, none of Windows 11)
-Tested:
-Windows 10 LTSC 2019 x86 (10.0.17763.316/6054)
-Windwos 10 1507 x86 (10.0.10240.16384)
+[x86 Native]:  
+Windows 10 x86 (ALL NT10 x86->x86, none of Windows 11)  
+Tested:  
+Windows 10 LTSC 2019 x86 (10.0.17763.316/6054)  
+Windwos 10 1507 x86 (10.0.10240.16384)  
 
-[x64 OS, Wow64 Process]
-Windows Vista -> Windows 8.1 (6000->9600, NT6 由于内核与Wow64处理的问题，Nt Syscall无法触发回调，但其他五种似乎仍然正常触发)
-Windows 10 -> Windows 11 (10240->?, 正常工作)
+[x64 OS, Wow64 Process]  
+Windows Vista -> Windows 8.1 (6000->9600, NT6 由于内核与Wow64处理的问题，Nt Syscall无法触发回调，但其他五种似乎仍然正常触发)  
+Windows 10 -> Windows 11 (10240->?, 正常工作)  
 
-[x64 Native]
-Widnows Vista -> Windows 11
+[x64 Native]  
+Widnows Vista -> Windows 11  
 
 调用进程和目标进程必须都是 Wow64 或都是 Native64。否则，将返回错误 STATUS_NOT_SUPPORTED。  
 对于 Wow64 进程，调用最终会填充 32 位 PEB（偏移量为 0x254）的“InstrumentationCallback”字段，而对于 Native64 进程，调用最终会填充目标进程的 _KPROCESS 对象的“InstrumentationCallback”字段并设置每个线程的 _DISPATCHER_HEADER 的“instrumented”位。  
