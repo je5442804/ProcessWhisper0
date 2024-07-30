@@ -2,10 +2,10 @@
 任何版本都不支持跨进程架构进行注入
 
 ## 限制
-1：老旧系统下Wow64 Nt syscall不触发，x86 Native 系统有很低的概率会崩溃，当然x64, wow64在某些罕见进程也可能会崩溃  
+1: 老旧系统下Wow64 Nt syscall不触发，x86 Native 系统有很低的概率会崩溃，当然x64, wow64在某些罕见进程也可能会崩溃  
 2: ADMIN+/SYSTEM 级别的Token, 因为远程注入必须要 SeDebugPrivilege 特权   
-3：需要内核到用户态的切换后回调触发，意味着某些进程需要很久，或特定行为操作后，或者根本无法等到它触发  
-4：已经在检测范围下  
+3: 需要内核到用户态的切换后回调触发，意味着某些进程需要很久，或特定行为操作后，或者根本无法等到它触发  
+4: 已经在检测范围下  
 
 [LdrInitializeThunk] - Thread and initial process thread creation starting point  
 [KiUserExceptionDispatcher]- Kernel exception dispatcher will IRET here on 1 of 2 conditions.  
