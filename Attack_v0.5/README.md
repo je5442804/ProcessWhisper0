@@ -29,6 +29,12 @@ Windows 10 -> Windows 11 (10240->?, 正常工作)
 [x64 Native]
 Widnows Vista -> Windows 11
 
+调用进程和目标进程必须都是 Wow64 或都是 Native64。否则，将返回错误 STATUS_NOT_SUPPORTED。  
+对于 Wow64 进程，调用最终会填充 32 位 PEB（偏移量为 0x254）的“InstrumentationCallback”字段，而对于 Native64 进程，调用最终会填充目标进程的 _KPROCESS 对象的“InstrumentationCallback”字段并设置每个线程的 _DISPATCHER_HEADER 的“instrumented”位。  
+
+很可能解释了为什么在旧版本（6000~9600)上， Wow64进程的CallBack对于大多数Native Call 没有反应  
+真挺神奇的，NtSet Wow64进程可以写Callback地址到Peb32的后面...  
+
 ## Reference
 [1] https://everdox.blogspot.com/2013/02/instrumentationcallback-and-advanced.html  
 [2] https://blog.xenoscr.net/2022/01/17/x86-Nirvana-Hooks.html  
