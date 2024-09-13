@@ -4,7 +4,7 @@ It has been proven feasible to bypass all solutions, but before that, we should 
 
 # Extreme defense rules  
 <details>
-<summary>不属于高度可信任进程</summary>
+<summary>Untrust</summary>
 
 ```bash  
 0: 以下规则假设当前攻击源进程不是 "位于可信目录的签名文件", AKA: 不属于高度可信任进程
@@ -52,7 +52,7 @@ SetWindowsHookEx, SetProp(PROPagate), SetWindowsLongPtr/SetClassLongPtr
 
 ## Attack v0.1
 Underground Dll Hijacking  
-.NET COR Hijacking ignored temporarily  
+.NET COR Injection ignored temporarily  
 
 v0.1.1: Classic Non-SideLoading Dll Hijacking  
 v0.1.2: ProcessDeviceMap Dll Hijacking aka Object Overloading  
