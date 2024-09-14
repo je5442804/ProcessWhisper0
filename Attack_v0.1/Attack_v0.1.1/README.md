@@ -3,10 +3,13 @@
 部分劫持甚至可以用来UAC提权，也有一些劫持在更新补丁后已经被修补。
 
 
-[Special Appoint Image File]
-[Landed Dll->Type: Unsupported Universal]
-[Support Command Only Operate]
-[Separable & Breakaway]
+```
+[Special Appoint Image File]  
+[Landed Dll->Type: Unsupported Universal]  
+[Support Command Only Operate]  
+[Separable & Breakaway]  
+```
+
 
 v0.1.1 仅需要制作恰当的dll, 无需额外API调用
 # DLL Hijack via Environment Variable, Phantom, Search Order
