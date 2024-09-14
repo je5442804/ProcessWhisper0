@@ -59,7 +59,5 @@ v0.1.2: ProcessDeviceMap Dll Hijacking aka Object Overloading
 v0.1.3: Application Directory Spoof Dll Hijacking  
 v0.1.4: Client Server Runtime Subsystem: AppCompatSxsData Activation Context Override Dll Hijacking  
 
-## Attack v0.x
-Reserved
 ## Attack v0.5
 Improved InstrumentationCallback Shellcode Process Injection  
